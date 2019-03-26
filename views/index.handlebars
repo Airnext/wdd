@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>WDD | 3.0</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="/public/img/favicon.png" rel="icon">
+  <link href="/public/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
+
+  <!-- Bootstrap CSS File -->
+  <link href="/public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Libraries CSS Files -->
+  <link href="/public/lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+  <link href="/public/lib/animate/animate.min.css" rel="stylesheet">
+  <link href="/public/lib/venobox/venobox.css" rel="stylesheet">
+  <link href="/public/lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+
+  <!-- Main Stylesheet File -->
+  <link href="/public/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+    Theme Name: TheEvent
+    Theme URL: https://bootstrapmade.com/theevent-conference-event-bootstrap-template/
+    Author: BootstrapMade.com
+    License: https://bootstrapmade.com/license/
+  ======================================================= -->
+</head>
+
+<body>
+
+  <!--==========================
+    Header
+  ============================-->
+  <header id="header">
+    <div class="container">
+
+      <div id="logo" class="pull-left">
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!-- <h1><a href="#main">C<span>o</span>nf</a></h1>-->
+        <!--<img src="/public/img/logo.png" alt="" title="">-->
+        <a href="#intro" class="scrollto"><img src="/public/img/logo.png" alt="WDD" title=""></a>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a href="/">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#speakers">Speakers</a></li>
+          <li><a href="#schedule">Schedule</a></li>
+          <li><a href="#venue">Venue</a></li>
+          <!-- <li><a href="#hotels">Hotels</a></li> -->
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#testimonials">Testimonials</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li class="buy-tickets"><a href="#buy-tickets">Buy Tickets</a></li>
+        </ul>
+      </nav><!-- #nav-menu-container -->
+    </div>
+  </header><!-- #header -->
+
+  <!--==========================
+    Intro Section
+  ============================-->
+  <section id="intro">
+    <div class="intro-container wow fadeIn">
+      <h1 class="mb-4 pb-0">The Annual<br><span>WDD</span> Conference</h1>
+      <h3 class="mb-4 pb-0"><span>THEME: </span> Thriving in an Era of Disruption</h3>
+      <p class="mb-4 pb-0">1<sup>st</sup> May 2019, Workers Day Delite... WDD | 3.0</p>
+      <a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="venobox play-btn mb-4" data-vbtype="video"
+        data-autoplay="true"></a>
+      <a href="#about" class="about-btn scrollto">About The Event</a>
+    </div>
+  </section>
+
+  <main id="main">
+
+    <!--==========================
+      About Section
+    ============================-->
+    <section id="about">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <h2>About The Event</h2>
+            <p>Alfred and Victoria HR Associates (AVA) is pleased to announce the third annual skills training for jobseekers tagged Workers’ Day Delight 3.0. <br>As you may already be aware we launched our first bespoke career event day in 2017, where over 60 jobseekers were equipped with employability skills to improve their chances at applying for and retaining suitable jobs. Many of them became interns and also got gainfully employed through our Agency. <br>With the success story recorded, 50% of the candidates got placements, in 2018 over Four hundred candidates registered for the program and also recorded quite a Percentage to have been gainfully employed too. Our event this year is focusing on, “Thriving in an era of Disruption”, we’re expecting to train entry and mid-level unemployed youth as part of our community outreach programme as well as those who already have established careers but need a refreshed career review. <br>This year is going is going to be exciting as we have grown exponentially with our Client base and requests for Internships and full time job placements. We also have Great speakers coming with their wealth of Knowledge. You don’t want to miss it !!!!!!!!!!!!!!!!!!!!!! Get on board the AVA Train !!!!!!!!!!!!!!!!!!!!!!!</p>
+          </div>
+          <div class="col-lg-3">
+            <h3>When</h3>
+            <p>08:00 AM Prompt<br>Wed 1<sup>st</sup> of May, 2019</p>
+            <hr>
+            <h3>Where</h3>
+            <p>Workforce Management Center, Gbagada, Lagos</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!--==========================
+      Speakers Section
+    ============================-->
+    <section id="speakers" class="wow fadeInUp">
+      <div class="container">
+        <div class="section-header">
+          <h2>Event Speakers</h2>
+          <p>Here are some of our speakers</p>
+        </div>
+
+        <div class="row">
+          {{#each speakers}}
+          <div class="col-lg-6 col-md-6">
+            <div class="speaker">
+              <a href="/speaker-details/{{name}}"><img src="/public/img/speakers/{{img}}" alt="Speaker {{this.index}}" class="img-fluid img-responsive"></a>
+              <div class="details">
+                <h3><a href="/speaker-details/{{name}}">{{name}}</a></h3>
+                <p>{{description}}</p>
+                <div class="social">
+                  <a href="https://{{profileLink}}" target="_blank"><i class="fa fa-linkedin"></i></a>
+                  <a href="https://{{profileLink}}"><i class="fa fa-facebook"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          {{/each}}
+        </div>
+
+    </section>
+
+    <!--==========================
+      Schedule Section
+    ============================-->
+    <section id="schedule" class="section-with-bg">
+      <div class="container wow fadeInUp">
+        <div class="section-header">
+          <h2>Event Schedule</h2>
+          <p>Here is our event schedule</p>
+        </div>
+
+        <ul class="nav nav-tabs" role="tablist">
+          <li class="nav-item">
+            <a class="nav-link active" href="#day-1" role="tab" data-toggle="tab">Event Day</a>
+          </li>
+        </ul>
+
+        <h3 class="sub-heading">We help young graduates and applicants to find the employments of their dream. Its very simple, we get you ready for the job by profiling you and setting the best for your ability and talent</h3>
+
+        <div class="tab-content row justify-content-center">
+
+          <!-- Schdule Day 1 -->
+          <div role="tabpanel" class="col-lg-9 tab-pane fade show active" id="day-1">
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">08:00 AM <br> <span class="text-muted">to</span> <br> 09:00 AM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/5.jpg" alt="Bidemi">
+                </div>
+                <h4>Registration | <span>Bidemi</span></h4>
+                <p>Coordinator</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">09:00 AM <br> <span class="text-muted">to</span> <br> 09:15 AM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/7.jpg" alt="Kelechi Mbah">
+                </div>
+                <h4>Introduction | <span>Kelechi Mbah</span></h4>
+                <p>Personal Development</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">09:15 AM <br> <span class="text-muted">to</span> <br> 09:30 AM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/6.jpg" alt="Bunmi Teru">
+                </div>
+                <h4>Welcome Speech by the Convener | <span>Bunmi Teru</span></h4>
+                <p>Convener</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">09:30 AM <br> <span class="text-muted">to</span> <br> 10:30 AM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/1.jpg" alt="Abosede Alimi">
+                </div>
+                <h4>ENTREPRENEURSHIP AS A CAREER CHOICE | <span>Abosede Alimi</span></h4>
+                <p>Director Strategy, Funding and Stakeholder Management at the Lagos State Entrepreneurship Trust Fund (LSETF)</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">10:30 AM <br> <span class="text-muted">to</span> <br> 11:30 AM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/4.jpeg" alt="Olufunmilola Bucknor">
+                </div>
+                <h4>RECRUITMENT IN A DISRUPTIVE ERA | <span>Olufunmilola Bucknor</span></h4>
+                <p>Founder and CEO of HR madam Consulting</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">11:30 AM <br> <span class="text-muted">to</span> <br> 12:00 PM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/6.jpg" alt="Bunmi Teru">
+                </div>
+                <h4>Success Stories | <span>Bunmi Teru</span></h4>
+                <p>Convener</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">12:00 PM <br> <span class="text-muted">to</span> <br> 12:45 PM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/7.jpg" alt="Kelechi Mbah">
+                </div>
+                <h4>Brain Teaser | <span>Kelechi Mbah</span></h4>
+                <p>Personal Development</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">01:00 PM <br> <span class="text-muted">to</span> <br> 02:00 PM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/8.jpg" alt="Titi">
+                </div>
+                <h4>LUNCH | <span>Titi</span></h4>
+                <p>Coordinator</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">02:00 PM <br> <span class="text-muted">to</span> <br> 02:45 PM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/2.jpg" alt="Olushola Amusan">
+                </div>
+                <h4>DISRUPTION IN TECHNOLOGY | <span>Olushola Amusan</span></h4>
+                <p>President of the 8th and 9th Sessions of the African Youth and Governance Conference.</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">02:45 PM <br> <span class="text-muted">to</span> <br> 03:45 PM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/3.jpg" alt="Tiamiyu Mubarak Damilare">
+                </div>
+                <h4>THE YOUTH AND DISTRUPTION | <span>Tiamiyu Mubarak Damilare</span></h4>
+                <p>Data Management Consultant at Adam Smith International (ASI)</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">03:45 PM <br> <span class="text-muted">to</span> <br> 04:45 PM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/6.jpg" alt="Bunmi Teru">
+                </div>
+                <h4>Mock Interview | <span>Bunmi Teru</span></h4>
+                <p>Convener</p>
+              </div>
+            </div>
+
+            <div class="row schedule-item">
+              <div class="col-md-2"><time class="text-center">04:45 PM <br> <span class="text-muted">to</span> <br> 05:00 PM</time></div>
+              <div class="col-md-10">
+                <div class="speaker">
+                  <img src="/public/img/speakers/7.jpg" alt="Kelechi Mbah">
+                </div>
+                <h4>Vote of Thanks | <span>Kelechi Mbah</span></h4>
+                <p>Personal Development</p>
+              </div>
+            </div>
+
+          </div>
+          <!-- End Schdule Day 1 -->
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--==========================
+      Venue Section
+    ============================-->
+    <section id="venue" class="wow fadeInUp">
+
+      <div class="container-fluid">
+
+        <div class="section-header">
+          <h2>Event Venue</h2>
+          <p>Event venue location info and gallery</p>
+        </div>
+
+        <div class="row no-gutters">
+          <div class="col-lg-6 venue-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3963.7615497555566!2d3.3746829147708364!3d6.551760395261317!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b8d9e6ad1c16d%3A0xe5723d7fcd3167ce!2sWorkforce+Group!5e0!3m2!1sen!2sng!4v1552318536588" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+          </div>
+
+          <div class="col-lg-6 venue-info">
+            <div class="row justify-content-center">
+              <div class="col-11 col-lg-8">
+                <h3>Workforce Management Center, Gbagada, Lagos</h3>
+                <p>Zone Tech Park Plot 9, Gbagada Industrial Scheme beside UPS, Gbagada - Oworonshoki Expy, Araromi, Lagos</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="container-fluid venue-gallery-container">
+        <div class="row no-gutters">
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="/public/img/venue-gallery/1.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="/public/img/venue-gallery/1.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="/public/img/venue-gallery/2.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="/public/img/venue-gallery/2.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="/public/img/venue-gallery/3.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="/public/img/venue-gallery/3.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="/public/img/venue-gallery/4.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="/public/img/venue-gallery/4.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="/public/img/venue-gallery/5.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="/public/img/venue-gallery/5.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="/public/img/venue-gallery/6.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="/public/img/venue-gallery/6.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="/public/img/venue-gallery/7.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="/public/img/venue-gallery/7.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+          <div class="col-lg-3 col-md-4">
+            <div class="venue-gallery">
+              <a href="/public/img/venue-gallery/8.jpg" class="venobox" data-gall="venue-gallery">
+                <img src="/public/img/venue-gallery/8.jpg" alt="" class="img-fluid">
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!--==========================
+      Hotels Section
+    ============================-->
+    
+
+    <!--==========================
+      Gallery Section
+    ============================-->
+    <section id="gallery" class="wow fadeInUp">
+
+      <div class="container">
+        <div class="section-header">
+          <h2>Gallery</h2>
+          <p>Check our gallery from the recent events</p>
+        </div>
+      </div>
+
+      <div class="owl-carousel gallery-carousel">
+        <a href="/public/img/gallery/1.jpg" class="venobox" data-gall="gallery-carousel"><img src="/public/img/gallery/1.jpg" alt=""></a>
+        <a href="/public/img/gallery/2.jpg" class="venobox" data-gall="gallery-carousel"><img src="/public/img/gallery/2.jpg" alt=""></a>
+        <a href="/public/img/gallery/3.jpg" class="venobox" data-gall="gallery-carousel"><img src="/public/img/gallery/3.jpg" alt=""></a>
+        <a href="/public//public/img/gallery/4.jpg" class="venobox" data-gall="gallery-carousel"><img src="/public/img/gallery/4.jpg" alt=""></a>
+        <a href="/public/img/gallery/5.jpg" class="venobox" data-gall="gallery-carousel"><img src="/public/img/gallery/5.jpg" alt=""></a>
+        <a href="/public/img/gallery/6.jpg" class="venobox" data-gall="gallery-carousel"><img src="/public/img/gallery/6.jpg" alt=""></a>
+        <a href="/public/img/gallery/7.jpg" class="venobox" data-gall="gallery-carousel"><img src="/public/img/gallery/7.jpg" alt=""></a>
+        <a href="/public/img/gallery/8.jpg" class="venobox" data-gall="gallery-carousel"><img src="/public/img/gallery/8.jpg" alt=""></a>
+      </div>
+
+    </section>
+
+    <!--==========================
+      Testimonials Section
+    ============================-->
+        <section id="testimonials" class="section-with-bg wow fadeInUp">
+          <div class="container">
+            <div class="section-header">
+              <h2>Testimonials</h2>
+            </div>
+
+            <div id="testimonial" class="carousel slide" data-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active testimonial-logo">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Philip Akpeki - Swifta Systems & Services International</h5>
+                  </div>
+                  <blockquote>
+                    I attended both WDD 1.0 & 2.0, delightful, encouraging and corrective information was given. Bunmi Teru interviewed me for internship slots as I was looking for a place for my One year OND IT. I was sent to Lotus Beta. WDD 2.0 I was sent to my present place of work Swifta. I would recommend to my friends andyday infact buying tickets this year for some of my friends. I have since been working and grateful to AVA for the opportunity.
+                  </blockquote>
+                </div>
+                <div class="carousel-item testimonial-logo">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Olanike Eniayewu - Dove Insurance Brokes Limited</h5>
+                  </div>
+                  <blockquote>
+                    My experience of the last WDD 2.0 was very educative and had fun learning new things. A friend of mine invited me to the program and my highlight of the day was the breakout sessions. The facilitators were passionate about the topics they delivered and presentation was straightforward. Furthermore the content of the time was very okay. I am buying tickets for 3 friends for the 3.0 infact I am decided to volunteer in organizing the program this year.
+                  </blockquote>
+                </div>
+                <div class="carousel-item testimonial-logo">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Dolapo Obe - Engineer at Mainone Cable</h5>
+                  </div>
+                  <blockquote>
+                    WDD 2.0 was an opener  for me and it was wonderful experience. Tayo convinced me to attend the program and part pf the experience I gathered from the seminar was how to work as a team and being a leader too. My greatest highlight for me was the after event counselling anchored by Bunmi Teru, she identifed areas where I cpuld explore, she made realise the value of volunteering as my volunteer experience paved way for me to be interviewd at Mainone and untlimately the job. I have picked on with my career and being conscious to improve daily. I would definitely recommend to my friends.
+                  </blockquote>
+                </div>
+                <div class="carousel-item testimonial-logo">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Stella Akomolafe - Group HR Metropolitan Business School</h5>
+                  </div>
+                  <blockquote>
+                    My experience with WDD 2.0 was awesome !!!!!!! I have been a follower of AVA so I follow everything they do. I learnt about networking, xollaboration, thinking outside the box, team work. The facilitators all were wonderful and well organized and they gave details about their presentation with huge career opportunities. I got my job through Alfred & Victoria Associates one month after the program.  I have purchased 8 tickets already for the youth in my church. We were taught to give back. Thank you AVA!!!!!
+                  </blockquote>
+                </div>
+                <div class="carousel-item testimonial-logo">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Toyosi Atunde - Sales Executive at Blue print Technologies Ikoyi</h5>
+                  </div>
+                  <blockquote>
+                    My WDD 1.0 experience was great and educative and thus helped me to learn how to build my cv well as I was given a template to work with. I had the chance of meeting a career counsellor who helped to map out my career path. My brother introduced me to the program. The facilitators are like role models, they have achieved alot and this inspired me the content and time was okay,they kept following up for guidance. AVA has been doing good for now and think they should keep it up......
+                  </blockquote>
+                </div>
+                <div class="carousel-item testimonial-logo">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Olaide Ogunleye - Project Coordinator Mainone Cable</h5>
+                  </div>
+                  <blockquote>
+                    I registered for WDD 2.0 but unfortunately I couldnt make the event. I applied for a project management role via AVA just immediately after my passing out parade. I attended Interview with the guidance of the AVA team who ensured and followed through the intervoew process with me. I attended the interview at Mainone and job the one year internship job. That was a year ago and it has been an eventful and explosive experience, the position was for a year but eight months into the program I was offered a permanent role in the company where I am currently learning and growing. All I had to do is to take the bold step by registering for the program and trusted the AVA team.
+                  </blockquote>
+                </div>
+                <div class="carousel-item testimonial-logo">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Tomi Fowe - Personal Assistant Sevench Space</h5>
+                  </div>
+                  <blockquote>
+                    Attending WDD 2.0 was one of my cherished moments in 2018. I was a fresh graduate awaiting NYSC and I was currently looking for a Job. I attended this career seminar and it was a life-changing experience for me. I learnt a lot about how to answer interview questions, LinkedIn optimization amongst other things. I got a lot more than the 3000 paid for the event as it was well coordinated, beautiful refreshments, networking and Job opportunities. To top it all, I got my first job through Alfred and Victoria Associate few weeks after the event. I strongly advise every young graduate and undergraduate to attend this next edition of the event.
+                  </blockquote>
+                </div>
+                <div class="carousel-item testimonial-logo">
+                  <div class="carousel-caption d-none d-md-block">
+                    <h5>Sadiq Adekunle - Sales Executive Mainone Cable</h5>
+                  </div>
+                  <blockquote>
+                    My experience with Alfred & Victoria Associates was good one, i saw the job ad publication online (2018), i applied, and was later called for screening at the office. I had a chat with thier staff who enlightened me and told me about the program. I was convinced and i paid for the program, but unfortunately i couldn’t attend. A few days later, got a job invite from mainone cable as a sales executive. I took the written test and an oral interview, passed and was told to resume work the following week. Am really grateful for the WDD 2.0 platform, though i condnt attend the program but got the job through alfred and victoria associates and get me a job service. I am not longer with mainone cable but this event provided me with an opportunity to work with multinational institution and also set up a road map for my career.
+                  </blockquote>
+                </div>
+              </div>
+
+              <ol class="carousel-indicators">
+                <li data-target="#testimonial" data-slide-to="0" class="active"></li>
+                <li data-target="#testimonial" data-slide-to="1"></li>
+                <li data-target="#testimonial" data-slide-to="2"></li>
+                <li data-target="#testimonial" data-slide-to="3"></li>
+                <li data-target="#testimonial" data-slide-to="4"></li>
+                <li data-target="#testimonial" data-slide-to="5"></li>
+                <li data-target="#testimonial" data-slide-to="6"></li>
+                <li data-target="#testimonial" data-slide-to="7"></li>
+              </ol>
+
+              <a class="carousel-control-prev" href="#testimonial" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#testimonial" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+    <!--==========================
+      F.A.Q Section
+    ============================-->
+    <section id="faq" class="wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>F.A.Q </h2>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-9">
+              <ul id="faq-list">
+
+                <li>
+                  <a data-toggle="collapse" class="collapsed" href="#faq1">What are our services? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq1" class="collapse" data-parent="#faq-list">
+                    <p>
+                      We Offer Full time, part-time & Internship Jobs for Nigerian Youth.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq2" class="collapsed">How do we deliver our service(s)? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq2" class="collapse" data-parent="#faq-list">
+                    <p>
+                      There are two product lines here the Corporate and the Individual.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq3" class="collapsed">Are our services free or paid? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq3" class="collapse" data-parent="#faq-list">
+                    <p>
+                      Corporate is paid for while Individuals are paid for.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq4" class="collapsed">Do we offer free services? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq4" class="collapse" data-parent="#faq-list">
+                    <p>
+                     Yes Internships are free, its our CSR.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq5" class="collapsed">What are the benefits of paying? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq5" class="collapse" data-parent="#faq-list">
+                    <p>
+                      You get to see a career coach who maps out a 5 year plan, trainings and skills to be acquired for the intended goals, ability to have advises on career growth, switch and advancement, cv rebranding, coaching for interviews and as well the required motivation needed to be get a job and retained.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq6" class="collapsed">What happens when a client isn’t satisfied? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq6" class="collapse" data-parent="#faq-list">
+                    <p>
+                      We appreciate feebacks which help us improve and close out on missed opportunities.
+                    </p>
+                  </div>
+                </li>
+      
+                <li>
+                  <a data-toggle="collapse" href="#faq7" class="collapsed">What does WDD stand for? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq7" class="collapse" data-parent="#faq-list">
+                    <p>
+                      Workers Day Delite.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq8" class="collapsed">How long has wdd been in existence? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq8" class="collapse" data-parent="#faq-list">
+                    <p>
+                      Since 2017.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq9" class="collapsed">What does wdd seek to achieve? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq9" class="collapse" data-parent="#faq-list">
+                    <p>
+                      job seekers are equipped with employability skills to improve their chances at applying for and retaining suitable jobs. Many of them became interns and also got gainfully employed through our Agency.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq10" class="collapsed">How can I be part of wdd? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq10" class="collapse" data-parent="#faq-list">
+                    <p>
+                      buy a ticket from this site or register via https://getmeajob.com.ng/wdd/
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq11" class="collapsed">Do you accept volunteers? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq11" class="collapse" data-parent="#faq-list">
+                    <p>
+                      Yes as a matter of fact, we have successful candidates who have decided to join the Support group as a way of also giving back and encourage the youth to attend and also benefit.
+                    </p>
+                  </div>
+                </li>
+
+                <li>
+                  <a data-toggle="collapse" href="#faq12" class="collapsed">How is AVA connected to GMAJ/WDD? <i class="fa fa-minus-circle"></i></a>
+                  <div id="faq12" class="collapse" data-parent="#faq-list">
+                    <p>
+                      AVA is the parent company that is supporting the growth of GMAJ Services & WDD.
+                    </p>
+                  </div>
+                </li>
+      
+              </ul>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!--==========================
+      Subscribe Section
+    ============================-->
+    
+
+    <!--==========================
+      Buy Ticket Section
+    ============================-->
+    <section id="buy-tickets" class="section-with-bg wow fadeInUp">
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Buy Ticket</h2>
+          <p>Get Ticket Now to Secure Access to this Event.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4">
+            
+          </div>
+          <div class="col-lg-4">
+            <div class="card mb-5 mb-lg-0">
+              <div class="card-body">
+                <h5 class="card-title text-muted text-uppercase text-center">Access</h5>
+                <h6 class="card-price text-center">&#8358;5000</h6>
+                <hr>
+                <ul class="fa-ul">
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Access to Workshop Materials</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Access to Speakers Lounge</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Full Lunch</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>CV Rebranding Templates</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>50 Internship/Job Placement Slots</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>Career Coach Appointment</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>CV Addition to Profiled Database</li>
+                  <li><span class="fa-li"><i class="fa fa-check"></i></span>After Event Mentoring</li>
+                </ul>
+                <hr>
+                <div class="text-center">
+                  <button type="button" class="btn" data-toggle="modal" data-target="#buy-ticket-modal" data-ticket-type="pro-access">Buy Now</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Pro Tier -->
+          <div class="col-lg-4">
+            
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Modal Order Form -->
+      <div id="buy-ticket-modal" class="modal fade">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h4 class="modal-title">Buy Ticket</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+
+              <form method="POST" action="/purchase">
+                <div class="form-group">
+                  <input type="text" id="name" class="form-control" name="name" placeholder="Your Name" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="email" id="email" class="form-control" name="email" placeholder="Your Email" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="text" id="phone" class="form-control" name="phone" placeholder="Your Phone Number" maxlength="11" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="ticket" disabled="disabled" value="ACCESS FEE" required="required">
+                </div>
+                <div class="form-group">
+                  <input type="text" class="form-control" name="amount" disabled="disabled" value="5000" required="required">
+                </div>
+                <div class="text-center">
+                  <button type="submit" id="btn-buy-ticket" class="btn">Buy Now</button>
+                </div>
+              </form>
+            </div>
+          </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+
+    </section>
+
+    <!--==========================
+      Contact Section
+    ============================-->
+    <section id="contact" class="section-bg wow fadeInUp">
+
+      <div class="container">
+
+        <div class="section-header">
+          <h2>Contact Us</h2>
+          <p>If you have further questions, our friendly Customer Support Team is always ready to help.</p>
+        </div>
+
+        <div class="row contact-info">
+
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="ion-ios-location-outline"></i>
+              <h3>Address</h3>
+              <address>56, Opebi road by salvation, Ikeja</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="ion-ios-telephone-outline"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:08064592256">08064592256</a></p>
+              <p><a href="tel:08090916924">08090916924</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="ion-ios-email-outline"></i>
+              <h3>Email</h3>
+              <p><a href="mailto:info@getmeajob.com.ng">info@getmeajob.com.ng</a></p>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="form">
+          <div id="sendmessage">Your message has been sent. Thank you!</div>
+          <div id="errormessage"></div>
+          <form action="" method="post" role="form" class="contactForm">
+            <div class="form-row">
+              <div class="form-group col-md-6">
+                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                <div class="validation"></div>
+              </div>
+              <div class="form-group col-md-6">
+                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                <div class="validation"></div>
+              </div>
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+              <div class="validation"></div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+              <div class="validation"></div>
+            </div>
+            <div class="text-center"><button type="submit">Send Message</button></div>
+          </form>
+        </div>
+
+      </div>
+    </section><!-- #contact -->
+
+  </main>
+
+
+  <!--==========================
+    Footer
+  ============================-->
+  <footer id="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-4 col-md-6 footer-info">
+            <img src="/public/img/logo.png" alt="WDD">
+            <p>We help young graduates and applicants to find the employments of their dream. Its very simple, we get you ready for the job by profiling you and setting the best for your ability and talent.</p>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-links">
+            <h4>Useful Links</h4>
+            <ul>
+              <li><i class="fa fa-angle-right"></i> <a href="/">Home</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="/#about">About us</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Services</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Terms of service</a></li>
+              <li><i class="fa fa-angle-right"></i> <a href="#">Privacy policy</a></li>
+            </ul>
+          </div>
+
+          <div class="col-lg-4 col-md-6 footer-contact">
+            <h4>Contact Us</h4>
+            <p>56, Opebi road by salvation, Ikeja, Lagos, Nigeria <br>
+              <strong>Phone:</strong> 08064592256, 08090916924 <br>
+              <strong>Email:</strong> info@getmeajob.com.ng<br>
+            </p>
+
+            <div class="social-links">
+              <a href="@alfredvictoria1" class="twitter"><i class="fa fa-twitter"></i></a>
+              <a href="https://www.facebook.com/alfredandvictoriaassociates/" class="facebook"><i class="fa fa-facebook"></i></a>
+              <a href="#" class="instagram"><i class="fa fa-instagram"></i></a>
+              <a href="#" class="google-plus"><i class="fa fa-google-plus"></i></a>
+              <a href="https://www.facebook.com/alfredandvictoriaassociates/" class="linkedin"><i class="fa fa-linkedin"></i></a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="copyright">
+        &copy; 2019 Copyright <strong>WDD</strong>. All Rights Reserved
+      </div>
+      
+    </div>
+  </footer><!-- #footer -->
+
+  <a href="#" class="back-to-top"><i class="fa fa-angle-up"></i></a>
+
+  <!-- JavaScript Libraries -->
+  <script src="/public/lib/jquery/jquery.min.js"></script>
+  <script src="/public/lib/jquery/jquery-migrate.min.js"></script>
+  <script src="/public/lib/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="/public/lib/easing/easing.min.js"></script>
+  <script src="/public/lib/superfish/hoverIntent.js"></script>
+  <script src="/public/lib/superfish/superfish.min.js"></script>
+  <script src="/public/lib/wow/wow.min.js"></script>
+  <script src="/public/lib/venobox/venobox.min.js"></script>
+  <script src="/public/lib/owlcarousel/owl.carousel.min.js"></script>
+  <script src="/public/lib/bootstrap/js/bootstrap.min.js"></script>
+
+  <!-- Contact Form JavaScript File -->
+  <script src="/public/contactform/contactform.js"></script>
+
+  <!-- Template Main Javascript File -->
+  <script src="/public/js/main.js"></script>
+</body>
+
+</html>

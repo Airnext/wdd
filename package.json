@@ -1,0 +1,33 @@
+{
+  "name": "wdd",
+  "version": "1.0.0",
+  "description": "An event planning website",
+  "main": "server.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wdd",
+    "event"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.2",
+    "express-validator": "^5.3.1",
+    "mongoose": "^5.4.19",
+    "paystack": "^2.0.1",
+    "paystack-api": "^2.0.1",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {
+    "morgan": "^1.9.1"
+  }
+}
