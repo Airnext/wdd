@@ -964,6 +964,7 @@ body.mobile-nav-active #mobile-nav-toggle {
   overflow: hidden;
   border-right: 3px solid #fff;
   border-bottom: 3px solid #fff;
+  height: 330px;
 }
 
 #venue .venue-gallery img {

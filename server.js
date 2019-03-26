@@ -19,7 +19,8 @@ mongoose.connection.on('error', err => {
 	console.log('Mongoose Default Connection Error : ' + err);
 });
 
-// mongoose.connect('mongodb://localhost/wdd');
+
+//mongoose.connect('mongodb://localhost/wdd');
 
 app = config(app);
 
