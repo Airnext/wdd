@@ -1716,16 +1716,37 @@ body.mobile-nav-active #mobile-nav-toggle {
   #venue .venue-info h3 {
     font-size: 24px;
   }
+  #testimonials{
+    padding:5px;
+  }
+  #testimonials .testimonial-logo {
+    padding: 10px 30px;
+  }
 }
 
 @media (max-width: 480px) {
   #schedule .nav-tabs a {
     padding: 8px 30px;
   }
+  #testimonials{
+    padding:5px;
+  }
+  #testimonials .testimonial-logo {
+    padding: 10px 30px;
+  }
 }
 
 @media (max-width: 460px) {
   #subscribe button {
     margin-top: 10px;
+  }
+  #venue .venue-gallery {
+    height: 230px;
+  }
+  #testimonials{
+    padding:5px;
+  }
+  #testimonials .testimonial-logo {
+    padding: 10px 30px;
   }
 }

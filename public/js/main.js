@@ -143,5 +143,7 @@ jQuery(document).ready(function( $ ) {
   })
 
 // custom code 
-
+  $('.carousel').carousel({
+    interval: 20000
+  })
 });
