@@ -29,13 +29,11 @@ module.exports = {
 			
 				let newTicketNumber = 0;
 				newTicketNumber = Math.floor(Math.random() * 1500);
-				console.log('Ticket Number: ' +newTicketNumber);
 
 				clientModel.find({ticketNumber:newTicketNumber}, function(err, ticket){
 					if(err){throw err;}
 					
 					if(ticket.length > 0){
-						console.log('Ticket Length: ' +ticket.length);
 						saveClient();
 					}else{
 						let newClient = new clientModel({
@@ -54,5 +52,8 @@ module.exports = {
 				});
 		}
 		saveClient();
+	},
+	upload: function(req, res){
+		
 	}
 }
