@@ -25,6 +25,7 @@ module.exports = {
 		})
 	},
 	purchase: function(req, res){
+
 		function saveClient(){
 			
 				let newTicketNumber = 0;
@@ -54,6 +55,39 @@ module.exports = {
 		saveClient();
 	},
 	upload: function(req, res){
-		
+		function sendMail(){
+			var transporter = nodemailer.createTransport({
+			    service:'Gmail',
+			    auth: {
+			        user: "akhidenorernestium@gmail.com",
+			        pass: "*************"
+			    }
+			});
+
+			// setup email data with unicode symbols
+		    var mailOptions = {
+		        from: 'billing@alfred-victoria.com', // sender address
+		        to: 'ernestium2009@yahoo.com', // list of receivers
+		        subject: 'WDD 3.0 Ticket Details', // Subject line
+		        text: 'You have secured your ticket to the annual WDD event. The event will hold on 1, May 2019. 8:00 AM prompt', // plain text body
+		        html: '<div style="max-width:30%; background:#FF4500; color:#FFFFFF; padding:5px 0px;"><h1 style="text-align:center;">WDD 3.0</h1><table cellpadding="15px"><tr><td><b>Name</b></td><td>Akhidenor Ernest</td></tr><tr><td><b>Ticket Number</b></td><td>101</td></tr></table></div>' // html body
+		    };
+
+		    // send mail with defined transport object
+		    transporter.sendMail(mailOptions, (error, info) => {
+		        if (error) {
+		            res.redirect('/');
+		        }
+		    });
+		}
+
+		sendMail();
+
+		let viewModel = {
+
+		}
+
+		res.render('upload', viewModel);
+
 	}
 }

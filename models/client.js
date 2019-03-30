@@ -6,6 +6,7 @@ let ClientSchema = new Schema({
 	name:{type:String},
 	email:{type:String},
 	phone:{type:String},
+	amount:{type:Number},
 	ticketNumber:{type:Number},
 	dateCreated:{type:Date, 'default':Date.now}
 });
