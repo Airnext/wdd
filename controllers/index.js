@@ -55,6 +55,7 @@ module.exports = {
 		saveClient();
 	},
 	upload: function(req, res){
+<<<<<<< HEAD
 		function sendMail(){
 			var transporter = nodemailer.createTransport({
 			    service:'Gmail',
@@ -89,5 +90,8 @@ module.exports = {
 
 		res.render('upload', viewModel);
 
+=======
+		res.render('upload');
+>>>>>>> 62af825fa4da5d72895a5d17bf86ad8f3db7fef2
 	}
 }
