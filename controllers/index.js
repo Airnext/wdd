@@ -54,6 +54,6 @@ module.exports = {
 		saveClient();
 	},
 	upload: function(req, res){
-		
+		res.render('upload');
 	}
 }
