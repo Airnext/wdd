@@ -48,7 +48,7 @@ module.exports = {
 						newClient.save(function(err){
 							if(err){throw err;}
 
-							res.redirect('https://paystack.com/pay/wdd');
+							res.redirect('/upload');
 						});
 					}
 				});
@@ -68,7 +68,7 @@ module.exports = {
 
 		clientModel.findOne({email:{$regex:req.params.email}}, function(err, client){
 			if(err){throw err;}
-					
+			console.log('the length of client is ' + client.length);
 			if(client.length > 0){
 				let transporter = nodemailer.createTransport({
 				    service:'Gmail',
@@ -92,6 +92,8 @@ module.exports = {
 			        if (error) {
 			            res.redirect('/');
 			        }
+
+			        console.log('Email was sent successfully');
 			    });
 			    res.json(true);
 			}else{

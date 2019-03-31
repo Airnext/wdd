@@ -152,11 +152,13 @@ jQuery(document).ready(function( $ ) {
       let $this = $(this);
 
       let email = $this.val();
+      console.log('this is the email ' + email);
 
       $.ajax({
           'url':'/checker/' + email,
           'type':'POST'
         }).done(function(result){
+          console.log('this is the result ' + result);
           if(result){
             $('#file').removeAttr('disabled');
             $('#upload-btn').removeAttr('disabled');

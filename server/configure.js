@@ -8,8 +8,10 @@ let expressValidator = require('express-validator');
 let multer = require('multer');
 let flash = require('express-flash');
 let session = require('express-session');
+//let morgan = require('morgan');
 
 module.exports = function(app){
+	//app.use(morgan('dev'));
 	app.use(favicon(path.join(__dirname, '../public', 'img', 'favicon.png')));
 	app.use(bodyParser.urlencoded({extended:false}));
 	app.use(bodyParser.json());

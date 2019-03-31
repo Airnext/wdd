@@ -1735,11 +1735,23 @@ body.mobile-nav-active #mobile-nav-toggle {
   #schedule .nav-tabs a {
     padding: 8px 50px;
   }
+  #upload .upload-area fieldset{
+    padding: 30px 10px;
+  }
+  #upload .upload-area legend{
+    width:auto;
+  }
 }
 
 @media (max-width: 574px) {
   #venue .venue-info h3 {
     font-size: 24px;
+  }
+  #upload .upload-area fieldset{
+    padding: 30px 10px;
+  }
+  #upload .upload-area legend{
+    width:auto;
   }
 }
 
@@ -1753,6 +1765,12 @@ body.mobile-nav-active #mobile-nav-toggle {
   #testimonials .testimonial-logo {
     padding: 10px 30px;
   }
+  #upload .upload-area fieldset{
+    padding: 30px 10px;
+  }
+  #upload .upload-area legend{
+    width:auto;
+  }
 }
 
 @media (max-width: 460px) {
@@ -1764,5 +1782,11 @@ body.mobile-nav-active #mobile-nav-toggle {
   }
   #testimonials .testimonial-logo {
     padding: 10px 30px;
+  }
+  #upload .upload-area fieldset{
+    padding: 30px 10px;
+  }
+  #upload .upload-area legend{
+    width:auto;
   }
 }
