@@ -7,6 +7,7 @@ let	bodyParser = require('body-parser');
 let expressValidator = require('express-validator');
 let multer = require('multer');
 let flash = require('express-flash');
+let session = require('express-session');
 
 module.exports = function(app){
 	app.use(favicon(path.join(__dirname, '../public', 'img', 'favicon.png')));
@@ -14,6 +15,11 @@ module.exports = function(app){
 	app.use(bodyParser.json());
 	app.use(expressValidator());
 	app.use(multer({'dest':'./public/upload/temp'}).single('file'));
+	app.use(session({
+		secret:'Tv4_k*!+z20q-g&e5b7^',
+		resave: false,
+		saveUninitialized: false
+	}));
 	app.use(flash());
 	app.use('/public/', express.static(path.join(__dirname, '../public')));
 	routes(app);
