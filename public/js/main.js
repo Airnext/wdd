@@ -147,11 +147,11 @@ jQuery(document).ready(function( $ ) {
     interval: 20000
   });
 
-  $('#upload-email').blur(function(e) {
+  $('#upload-email').keyup(function(e) {
       e.preventDefault();
       let $this = $(this);
 
-      let email = $this.data('email');
+      let email = $this.val();
 
       $.ajax({
           'url':'/uploader/' + email,
@@ -160,9 +160,11 @@ jQuery(document).ready(function( $ ) {
           if(result){
             $('#file').removeAttr('disabled');
             $this.attr('disabled', 'disabled');
+          }else{
+            $('#emailHelpBlock').removeClass('text-muted').addClass('text-danger');
+            $('#emailHelpBlock').text('Email Not Found');
           }
         });
-
   });
 
 });
