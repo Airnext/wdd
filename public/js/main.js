@@ -147,11 +147,18 @@ jQuery(document).ready(function( $ ) {
     interval: 20000
   });
 
-  $('#upload-email').blur(function(e) {
+  $('#upload-btn').hide();
+  $('#display').hide();
+  $('#upload-btn').removeAttr('disabled');
+  setTimeout(function(){
+   $('#success').fadeOut(1000);
+  },5000)
+
+  $('#confirm-btn').on('click',function(e) {
       e.preventDefault();
       let $this = $(this);
 
-      let email = $this.val();
+      let email = $('#email').val();
       console.log('this is the email ' + email);
 
       $.ajax({
@@ -162,10 +169,19 @@ jQuery(document).ready(function( $ ) {
           if(result){
             $('#file').removeAttr('disabled');
             $('#upload-btn').removeAttr('disabled');
+            $('#upload-btn').show();
+            $('#confirm-btn').attr('disabled', 'disabled');
+            $('#confirm-btn').hide();
+            $('#display').show(setTimeout(function(){
+              $('#display').fadeOut(1000);
+            },5000));
+            $('#display').removeClass('alert-danger').addClass('alert-success');
+            $('#display').text('Email Confirmed Successfully!');
             $this.attr('disabled', 'disabled');
+            $('#emailHelpBlock').hide();
           }else{
-            $('#emailHelpBlock').removeClass('text-muted').addClass('text-danger');
-            $('#emailHelpBlock').text('Email Not Found');
+            $('#display').show();
+            $('#display').text('Email Not Found');
           }
         });
   });

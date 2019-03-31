@@ -1,5 +1,8 @@
 let speakerModel = require('../models/speaker');
 let clientModel = require('../models/client');
+let nodemailer = require('nodemailer');
+let path = require('path');
+let fs = require('fs');
 
 module.exports = {
 	index: function(req, res){
@@ -56,9 +59,7 @@ module.exports = {
 		saveClient();
 	},
 	upload: function(req, res){
-		let viewModel = {
-
-		}
+		let viewModel = {}
 
 		viewModel.uploadSuccess = req.flash('uploadSuccess');
 
@@ -68,9 +69,11 @@ module.exports = {
 
 		clientModel.findOne({email:{$regex:req.params.email}}, function(err, client){
 			if(err){throw err;}
-			console.log('the length of client is ' + client.length);
-			if(client.length > 0){
-				let transporter = nodemailer.createTransport({
+			console.log('client is ' + client);
+			console.log('-----------------------------------------');
+			console.log('                                          ');
+			if(client){
+			    let transporter = nodemailer.createTransport({
 				    service:'Gmail',
 				    auth: {
 				        user: "akhidenorernestium@gmail.com",
@@ -82,9 +85,9 @@ module.exports = {
 			    let mailOptions = {
 			        from: 'billing@alfred-victoria.com', // sender address
 			        to: client.email, // list of receivers
-			        subject: 'WDD 3.0 Ticket Details', // Subject line
+			        subject: 'WDD 3.0 Ticket', // Subject line
 			        text: 'You have secured your ticket to the annual WDD event. The event will hold on 1, May 2019. 8:00 AM prompt', // plain text body
-			        html: '<div style="max-width:30%; background:#FF4500; color:#FFFFFF; padding:5px 0px;"><h1 style="text-align:center;">WDD 3.0</h1><table cellpadding="15px"><tr><td><b>Name</b></td><td>'+client.name+'</td></tr><tr><td><b>Ticket Number</b></td><td>'+client.ticketNumber+'</td></tr></table></div>' // html body
+			        html: '<div style="max-width:30%; background:#FF4500; color:#FFFFFF; padding:5px 0px;"><h1 style="text-align:center;">WDD 3.0</h1><table cellpadding="15px"><tr><td><b>Name</b></td><td>' + client.name + '</td></tr><tr><td><b>Ticket Number</b></td><td>' + client.ticketNumber + '</td></tr></table></div>' // html body
 			    };
 
 			    // send mail with defined transport object
@@ -94,8 +97,8 @@ module.exports = {
 			        }
 
 			        console.log('Email was sent successfully');
+			        //res.redirect('/upload');
 			    });
-			    res.json(true);
 			}else{
 				res.json(false);
 			}
