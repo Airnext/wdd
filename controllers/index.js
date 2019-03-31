@@ -41,7 +41,7 @@ module.exports = {
 							name: req.body.name,
 							email: req.body.email,
 							phone: req.body.phone,
-							amount: req.body.amount,
+							amount: 5000,
 							ticketNumber: newTicketNumber
 						})
 
