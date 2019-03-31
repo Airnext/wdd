@@ -67,6 +67,9 @@
     <section id="upload" class="wow fadeIn">
       <div class="container">
         <div class="upload-area">
+          {{#if uploadSuccess}}
+            <p class="alert alert-success">{{uploadSuccess}} <span class="close" data-dismiss="alert">&times;</span></p>
+          {{/if}}
           <form method="post" action="/uploader" enctype="multipart/form-data">
             <fieldset>
               <legend>Upload CV</legend>
@@ -92,6 +95,7 @@
               </div>
               </fieldset>
             </form>     
+          }
         </div>
       </div>
     </section>

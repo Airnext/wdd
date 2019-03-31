@@ -154,7 +154,7 @@ jQuery(document).ready(function( $ ) {
       let email = $this.val();
 
       $.ajax({
-          'url':'/uploader/' + email,
+          'url':'/checker/' + email,
           'type':'POST'
         }).done(function(result){
           if(result){

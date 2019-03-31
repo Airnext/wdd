@@ -55,9 +55,15 @@ module.exports = {
 		saveClient();
 	},
 	upload: function(req, res){
-		res.render('upload');
+		let viewModel = {
+
+		}
+
+		viewModel.uploadSuccess = req.flash('uploadSuccess');
+
+		res.render('upload', viewModel);
 	},
-	uploader: function(req, res){
+	checker: function(req, res){
 
 		clientModel.findOne({email:{$regex:req.params.email}}, function(err, client){
 			if(err){throw err;}
@@ -91,5 +97,52 @@ module.exports = {
 				res.json(false);
 			}
 		})		
+	},
+	uploader: function(req, res){
+		function saveFile(){
+			let possible = 'abcdefghijklmnopqrstuvwxyz0123456789';
+			let fileUrl = '';
+
+			for(i=0; i < 6; i++){
+				fileUrl += possible.charAt(Math.floor(Math.random() * possible.length));
+			}
+
+			clientModel.find({'filename':fileUrl}, function(err, files){
+				if(err){throw err;}
+
+				if(files.length > 0){
+					saveFile();
+				}else{
+					let tempPath = req.file.path;
+					let ext = path.extname(req.file.originalname).toLowerCase();
+					let targetPath = path.resolve('./public/upload/' + fileUrl + ext);
+
+					if(ext === '.pdf' || ext === '.doc' || ext === '.docx'){
+						fs.rename(tempPath, targetPath, function(err){
+							if(err){ throw err}
+
+							let userEmail = req.body.email;
+
+							clientModel.findOne({email:userEmail}, function(err, client){
+								if(err){throw err;}	
+
+								client.filename = fileUrl + ext;
+
+								client.save(function(){
+									req.flash('uploadSuccess','CV Uploaded Successfully!');
+									res.redirect('/upload');
+								});
+							});
+						});
+					}else{
+						fs.unlink(tempPath, function(err){
+							res.status(500).json({'Error':'Invalid File Format.'});
+						});
+					}
+				}
+			})
+		}
+
+		saveFile();
 	}
 }

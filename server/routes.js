@@ -7,7 +7,8 @@ module.exports = function(app){
 	router.get('/speaker-details/:name', index.speaker);
 	router.post('/purchase', index.purchase);
 	router.get('/upload', index.upload);
-	router.post('/uploader/:email', index.uploader);
+	router.post('/checker/:email', index.checker);
+	router.post('/uploader', index.uploader);
 
 	router.use(function(req, res){
 		res.status(404).send('Page Not Found');
