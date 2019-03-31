@@ -708,6 +708,25 @@ body.mobile-nav-active #mobile-nav-toggle {
 }
 
 /*--------------------------------------------------------------
+# Upload Section
+--------------------------------------------------------------*/
+#upload{
+  padding: 60px 0 60px 0;
+}
+
+#upload .upload-area fieldset{
+  padding: 30px 70px;
+  text-align: left;
+  border: 1px solid #e0e5fa;
+  background: rgba(255, 255, 255, 0.5);
+  min-height: 250px;
+}
+#upload .upload-area legend{
+  width:15%;
+  text-align: center;
+}
+
+/*--------------------------------------------------------------
 # Speakers Section
 --------------------------------------------------------------*/
 

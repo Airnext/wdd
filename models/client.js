@@ -8,6 +8,7 @@ let ClientSchema = new Schema({
 	phone:{type:String},
 	amount:{type:Number},
 	ticketNumber:{type:Number},
+	filename:{type:String},
 	dateCreated:{type:Date, 'default':Date.now}
 });
 

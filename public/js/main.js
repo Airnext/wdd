@@ -140,10 +140,29 @@ jQuery(document).ready(function( $ ) {
     var ticketType = button.data('ticket-type');
     var modal = $(this);
     modal.find('#ticket-type').val(ticketType);
-  })
+  });
 
 // custom code 
   $('.carousel').carousel({
     interval: 20000
-  })
+  });
+
+  $('#upload-email').blur(function(e) {
+      e.preventDefault();
+      let $this = $(this);
+
+      let email = $this.data('email');
+
+      $.ajax({
+          'url':'/uploader/' + email,
+          'type':'POST'
+        }).done(function(result){
+          if(result){
+            $('#file').removeAttr('disabled');
+            $this.attr('disabled', 'disabled');
+          }
+        });
+
+  });
+
 });

@@ -7,7 +7,7 @@ const URI = require('./server/config');
 app.set('port', process.env.PORT || 3700);
 app.set('views', __dirname + '/views');
 
-/*
+
 mongoose.connect(process.env.MONGODB_URI || URI);
 
 // When successfully connected
@@ -19,9 +19,9 @@ mongoose.connection.on('connected', () => {
 mongoose.connection.on('error', err => {
 	console.log('Mongoose Default Connection Error : ' + err);
 });
-*/
 
-mongoose.connect('mongodb://localhost/wdd');
+
+//mongoose.connect('mongodb://localhost/wdd');
 
 app = config(app);
 
