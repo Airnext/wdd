@@ -147,7 +147,7 @@ jQuery(document).ready(function( $ ) {
     interval: 20000
   });
 
-  $('#upload-email').keyup(function(e) {
+  $('#upload-email').blur(function(e) {
       e.preventDefault();
       let $this = $(this);
 
@@ -159,6 +159,7 @@ jQuery(document).ready(function( $ ) {
         }).done(function(result){
           if(result){
             $('#file').removeAttr('disabled');
+            $('#upload-btn').removeAttr('disabled');
             $this.attr('disabled', 'disabled');
           }else{
             $('#emailHelpBlock').removeClass('text-muted').addClass('text-danger');
