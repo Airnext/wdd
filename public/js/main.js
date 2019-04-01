@@ -171,6 +171,7 @@ jQuery(document).ready(function( $ ) {
             $('#upload-btn').removeAttr('disabled');
             $('#upload-btn').show();
             $('#confirm-btn').attr('disabled', 'disabled');
+            $('#email').attr('disabled', 'disabled');
             $('#confirm-btn').hide();
             $('#display').show(setTimeout(function(){
               $('#display').fadeOut(1000);
