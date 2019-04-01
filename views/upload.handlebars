@@ -73,6 +73,9 @@
               {{#if uploadSuccess}}
                 <p class="alert alert-success text-center" id="success">{{uploadSuccess}} <span class="close" data-dismiss="alert">&times;</span></p>
               {{/if}}
+              {{#if uploadError}}
+                <p class="alert alert-danger text-center" id="success">{{uploadError}} <span class="close" data-dismiss="alert">&times;</span></p>
+              {{/if}}
               <p class="alert alert-danger text-center" id="display"> <span class="close" data-dismiss="alert">&times;</span></p>
               <div class="form-group row">
                 <label for="email" class="col-sm-2 col-md-2 col-lg-2 col-form-label">Email</label>

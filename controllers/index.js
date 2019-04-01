@@ -51,7 +51,7 @@ module.exports = {
 						newClient.save(function(err){
 							if(err){throw err;}
 
-							res.redirect('/upload');
+							res.redirect('https://paystack.com/pay/wdd');
 						});
 					}
 				});
@@ -62,6 +62,7 @@ module.exports = {
 		let viewModel = {}
 
 		viewModel.uploadSuccess = req.flash('uploadSuccess');
+		viewModel.uploadError = req.flash('uploadError');
 
 		res.render('upload', viewModel);
 	},
@@ -69,6 +70,7 @@ module.exports = {
 
 		clientModel.findOne({email:{$regex:req.params.email}}, function(err, client){
 			if(err){throw err;}
+
 			console.log('client is ' + client);
 			console.log('-----------------------------------------');
 			console.log('                                          ');
@@ -87,7 +89,7 @@ module.exports = {
 			        to: client.email, // list of receivers
 			        subject: 'WDD 3.0 Ticket', // Subject line
 			        text: 'You have secured your ticket to the annual WDD event. The event will hold on 1, May 2019. 8:00 AM prompt', // plain text body
-			        html: '<div style="max-width:30%; background:#FF4500; color:#FFFFFF; padding:5px 0px;"><h1 style="text-align:center;">WDD 3.0</h1><table cellpadding="15px"><tr><td><b>Name</b></td><td>' + client.name + '</td></tr><tr><td><b>Ticket Number</b></td><td>' + client.ticketNumber + '</td></tr></table></div>' // html body
+			        html: '<div style="max-width:100%; background:#FF4500; color:#FFFFFF; padding:5px 0px;"><h1 style="text-align:center;">WDD 3.0</h1><table cellpadding="15px"><tr><td><b>Name</b></td><td>' + client.name + '</td></tr><tr><td><b>Ticket Number</b></td><td>' + client.ticketNumber + '</td></tr></table></div>' // html body
 			    };
 
 			    // send mail with defined transport object
@@ -108,7 +110,9 @@ module.exports = {
 		function saveFile(){
 			let possible = 'abcdefghijklmnopqrstuvwxyz0123456789';
 			let fileUrl = '';
-
+			let userEmail = req.body.email;
+			console.log('req.body.email ' + req.body.email);
+			console.log('userEmail variable ' + userEmail);
 			for(i=0; i < 6; i++){
 				fileUrl += possible.charAt(Math.floor(Math.random() * possible.length));
 			}
@@ -127,17 +131,23 @@ module.exports = {
 						fs.rename(tempPath, targetPath, function(err){
 							if(err){ throw err}
 
-							let userEmail = req.body.email;
+
 
 							clientModel.findOne({email:userEmail}, function(err, client){
 								if(err){throw err;}	
+								console.log(client);
+								if(client){
+									client.filename = fileUrl + ext;
 
-								client.filename = fileUrl + ext;
-
-								client.save(function(){
-									req.flash('uploadSuccess','CV Uploaded Successfully!');
+									client.save(function(){
+										req.flash('uploadSuccess','CV Uploaded Successfully!');
+										res.redirect('/upload');
+									});
+								}else{
+									req.flash('uploadError','Error Uploading CV!');
 									res.redirect('/upload');
-								});
+								}
+								
 							});
 						});
 					}else{

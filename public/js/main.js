@@ -167,11 +167,12 @@ jQuery(document).ready(function( $ ) {
         }).done(function(result){
           console.log('this is the result ' + result);
           if(result){
+            console.log(email);
+            $('#email').attr('value', email);
             $('#file').removeAttr('disabled');
             $('#upload-btn').removeAttr('disabled');
             $('#upload-btn').show();
             $('#confirm-btn').attr('disabled', 'disabled');
-            $('#email').attr('disabled', 'disabled');
             $('#confirm-btn').hide();
             $('#display').show(setTimeout(function(){
               $('#display').fadeOut(1000);
@@ -185,6 +186,10 @@ jQuery(document).ready(function( $ ) {
             $('#display').text('Email Not Found');
           }
         });
+  });
+
+  $('#upload-btn').click(function(){
+    $('#email').attr('disabled', 'disabled');
   });
 
 });
